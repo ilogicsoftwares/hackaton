@@ -21,7 +21,7 @@
  
         <div class="container" >
                 <a href="#" class="float">
-                        <i class="fa fa-shopping-cart my-float" style="line-height: 2;font-size: 30px" title="Agregar a Tu Navidad"></i>
+                        <i ng-click="goToResumen()" class="fa fa-shopping-cart my-float" style="line-height: 2;font-size: 30px" title="Agregar a Tu Navidad"></i>
                         </a>
                 <div class="row header">
                   <div class="col-xm-2">
@@ -43,7 +43,7 @@
                            <div ng-if="x.codigo_marca=='C'"><strong>Cyzone</strong></div> 
                            <div>{{x.nombre_comercial.substr(0,10)}}</div>
                            <div class="text-center">
-                           <button class="btn btn-default text-center" style="background-color: black;color:white">Agregar</button>
+                           <button id="addButon" class="btn btn-default text-center" style="background-color: black;color:white">Agregar</button>
                            </div>
                         
                          </div>
@@ -53,7 +53,7 @@
 
                
                 <div class="text-center" style="margin-top:50px">
-                 <button class="btn btn-default" style="background-color:#D21194;color: white">Personaliza tu Regalo</button>
+                 <button class="btn btn-default" style="background-color:#D21194;color: white" ng-click="goToSelect()">Personaliza tu Regalo</button>
               
                 </div>
 
@@ -83,5 +83,12 @@
 .my-float{
 	margin-top:0px;
 }
+
+
+#addButon:hover{
+        background:gray;
+}
+
+</style>
 </style>
 </html>

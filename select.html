@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="angular.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="principal.css" >
+
+
+    
+    
+</head>
+
+
+<body ng-app="Hackaton" ng-controller="SelectController" >
+ 
+        <div class="container" >
+                <div class="row header">
+                  <div class="col-xm-2">
+                        <a role="link" region="Superior" parent="Bienvenida" title="Bienvenida" href="/Mobile" deluminate_imagetype="unknown"><img class="img-fluid" src="/img/icon.png"></img></a>   
+                  </div>
+                  <div class="col-xm-2">
+                        <a role="link" region="Superior" parent="Bienvenida" title="Bienvenida" href="/Mobile"  deluminate_imagetype="unknown"><img class="img-fluid" src="/img/esika.png"></img></a>
+                 
+                    </div>
+          </div>
+         
+          
+          <div class="container" ng-repeat="x in regalos">
+                        <div class="container" style="padding: 10px">
+                                        <input type="text" placeholder="Nombre"></input>
+                                        <select name="sexo">
+                                                     <option value="value1" selected>Masculino</option> 
+                                                     <option value="value2">Femenino</option>
+                                                     
+                                                   </select>
+                                        <input type="number" placeholder="Edad"></input>
+                                        <select name="categoria" style="width:96px">
+                                                     <option value="value1" selected>Fragancias</option> 
+                                                     <option value="value2">Maquillajes</option>
+                                                     <option value="value3">Tratamiento Corporal</option>
+                                                     <option value="value4">Tratamiento Facial</option>
+                                                   </select>
+                                                   <div class="text-right" style="margin-bottom:10px">
+                                                             <button class="btn btn-default" ng-click="addOffers($index)">Regalo</button>
+                                                   </div>
+                                       </div>
+                                      
+                <div class="container" style="overflow-x:auto">
+                        <div class="row" style="width: 1200px">
+                              
+                                <div  class="col-xs-1" style="padding-left: 15px" ng-repeat="y in x.productos">
+                                    <div ng-if="y.codigo_marca=='L'"><strong>L´Bel</strong></div> 
+                                    <img ng-src="{{y.imagenx}}" class="img-thumbnail" style="height:100px;" onerror="this.src='/img/error-image-generic.png'"></img>
+                                   <div ng-if="y.codigo_marca=='E'"><strong>Esika</strong></div> 
+                                   <div ng-if="y.codigo_marca=='C'"><strong>Cyzone</strong></div> 
+                                   <div>{{y.nombre_comercial.substr(0,10)}}</div>
+                                   <div>S/.{{y.precio_catalogo}}</div>
+                                   <div class="text-center">
+                                   <button class="btn btn-default text-center" id="addButon" style="background-color: black;color:white">Agregar</button>
+                                   </div>
+                                
+                                 </div>
+                     
+                        </div>
+                </div>
+              
+           </div>
+           <div class="container text-center" style="margin-top:15px">
+                   <button class="btn btn-default" ng-click="addClient()" style="margin: 5px">Agregar otro Regalo</button>
+                   <button class="btn btn-default" ng-click="goToResumen()" style="margin:5px">Procesar Regalos</button>
+           </div>
+</body>
+<style>
+#addButon:hover{
+        background:gray;
+
+}
+
+</style>
+
+</html>
