@@ -10,8 +10,13 @@ angular.module("Hackaton",[])
 }).controller("CatalogController",function($scope){
 
 
-  $scope.goToCatalogs=function(){
-    window.location="/catalogos.html";
+  $scope.goToCatalogConsult=function(){
+    window.location="/catalogsConsult.html";
   }
+
+}).controller("CatalogSeller",function($scope){
+
+ 
+  
 
 })
