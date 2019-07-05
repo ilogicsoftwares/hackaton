@@ -1,0 +1,25 @@
+
+.row.header{
+    padding: 10px;
+    height: 60px;
+    background-color: #ff335a
+
+}
+
+.logo{
+    background-image: url("esika.png");
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 100px;
+
+}
+
+.texto{
+    padding: 25px;
+    font-weight: bold;
+}
+
+.texto2{
+    padding-left: 30px;
+    font-weight: bold;
+}

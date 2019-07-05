@@ -1,7 +1,7 @@
 angular.module("Hackaton",[])
 .controller("HomeController",function($scope){
 
- 
+ $scope.hola="hola mundo";
   
   $scope.goToCatalogs=function(){
     window.location="/catalogos.html";
